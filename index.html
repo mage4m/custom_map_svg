@@ -6278,6 +6278,14 @@
           $("#custom-modal").fadeOut();
         });
 
+        $("#draggable").on("mouseover", function(){
+          $("body").css('overflow-y', 'hidden');
+        });
+
+        $("#draggable").on("mouseout", function(){
+          $("body").css('overflow-y', 'visible');
+        });
+
         var zoom = 1;
 
         $("#draggable").bind("wheel mousewheel", function (e) {
