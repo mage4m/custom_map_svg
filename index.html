@@ -150,6 +150,11 @@
         color: #f00;
       }
 
+      #box_svg path[data-bs-toggle] {
+        fill: #8eba5e;
+        /* filter: drop-shadow(0px 0px 40px #ccc); */
+      }
+
       #box_svg path[data-bs-toggle]:hover {
         fill: #ccc;
         /* filter: drop-shadow(0px 0px 40px #ccc); */
@@ -169,6 +174,119 @@
           text-decoration: none;
         }
       }
+
+      /* table css */
+      .table {
+          width: 100%;
+          max-width: 800px;
+          margin: 50px auto;
+      }
+
+      table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 16px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #e2e8f0;
+            user-select: none;
+        }
+        td {
+            border-bottom: 1px solid #f1f5f9;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        th.sort-asc::after, th.sort-desc::after {
+            font-size: 12px;
+            margin-left: 6px;
+        }
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .available {
+            background-color: #d1fae5;
+            color: #047857;
+            border: none;
+        }
+        button {
+            background-color: #4f4f4f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 4px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #4f4f4fd1;
+        }
+        #pageIndicator {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+    
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        th.sort-asc::after {
+            content: "▲";
+            position: absolute;
+            right: 10px;
+        }
+        th.sort-desc::after {
+            content: "▼";
+            position: absolute;
+            right: 10px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .available {
+            background-color: #e6f4ea;
+            color: #28a745;
+            border: 1px solid #28a745;
+        }
+
+        .table-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
   </head>
   <body>
@@ -5167,6 +5285,932 @@
       </div>
     </div>
 
+    <div class="table">
+      <table id="parcelTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)" id="lnoHeader">L No.</th>
+                <th>Status</th>
+                <th>Size</th>
+                <th>Classification</th>
+                <th>Price per Feet</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>220.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>2</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>3</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>4</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>195.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>5</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>195.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>6</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>7</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>8</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>9</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>10</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>11</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>194.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>12</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>262.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>13</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>199.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>14</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>187.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>15</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>183.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>16</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>180.40 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>17</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>180.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>18</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>180.10 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>19</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>180.60 m2 </td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>20</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>181.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>21</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>180.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>22</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>179.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>23</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>182.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>24</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>182.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>25</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>182.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>26</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>27</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>28</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>227.10 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>29</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>216.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>30</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>193.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>31</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>207.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>32</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>187.00</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>33</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>176.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>34</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>177.90 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>35</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>177.80 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>36</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>175.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>37</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>179.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>38</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>173.40 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>39</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>171.10 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>40</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>168.80 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>41</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>316.40 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>42</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>242.40 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>43</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>198.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>44</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>235.40 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>45</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>258.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>46</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>238.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>47</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>220.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>48</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>206.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>49</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>193.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>50</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>207.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>51</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>199.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>52</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>178.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>53</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>167.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>54</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>180.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>55</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>177.90 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>56</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>175.90 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>57</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>172.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>58</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>170.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>59</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>167.90 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>60</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>218.10 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>61</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>183.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>62</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>185.80 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>63</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>201.90 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>64</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>238.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>65</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>246.10 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>66</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>248.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>67</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>238.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>68</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>238.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>69</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>248.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>70</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>248.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>71</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>238.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>72</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>238.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>73</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>248.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>74</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>248.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>75</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>235.80 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>76</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>239.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>77</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>272.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>78</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>212.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>79</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>234.80 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>80</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>225.90 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>81</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>201.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>82</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>200.90 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>83</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>206.10 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>84</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>186.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>85</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>200.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>86</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.70 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>87</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>88</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>89</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>90</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.10 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>91</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.40 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>92</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>93</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.30 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>94</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.20 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>95</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>96</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.50 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>97</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>188.00 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>98</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>195.80 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>99</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>178.40 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+            <tr>
+                <td>100</td>
+                <td><a href="#" class="badge available">Available</a></td>
+                <td>193.60 m2</td>
+                <td>AR</td>
+                <td>BHD 0</td>
+                <td>BHD 0</td>
+            </tr>
+    
+        </tbody>
+    </table>
+
+    
+
+    <div class="table-pagination" style="margin-top: 20px;">
+        <button onclick="changePage(-1)">Previous</button>
+        <span id="pageIndicator">Page 1</span>
+        <button onclick="changePage(1)">Next</button>
+    </div>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -5268,6 +6312,55 @@
           e.preventDefault();
         });
       });
+
+
+      // table js 
+      let asc = true;
+        function sortTable(colIndex) {
+            const table = document.getElementById("parcelTable");
+            const rows = Array.from(table.rows).slice(1); // skip thead
+            const tbody = table.tBodies[0];
+
+            // Remove existing sort classes
+            const headers = table.querySelectorAll("th");
+            headers.forEach(th => th.classList.remove("sort-asc", "sort-desc"));
+
+            rows.sort((a, b) => {
+                const aVal = parseInt(a.cells[colIndex].innerText, 10);
+                const bVal = parseInt(b.cells[colIndex].innerText, 10);
+                return asc ? aVal - bVal : bVal - aVal;
+            });
+
+            asc = !asc;
+            headers[colIndex].classList.add(asc ? "sort-asc" : "sort-desc");
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        const rowsPerPage = 20;
+        let currentPage = 1;
+
+        function paginate() {
+            const rows = document.querySelectorAll("#parcelTable tbody tr");
+            const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+            rows.forEach((row, index) => {
+                row.style.display = (index >= (currentPage - 1) * rowsPerPage && index < currentPage * rowsPerPage) ? "" : "none";
+            });
+
+            document.getElementById("pageIndicator").innerText = "Page " + currentPage;
+        }
+
+        function changePage(direction) {
+            const rows = document.querySelectorAll("#parcelTable tbody tr");
+            const totalPages = Math.ceil(rows.length / rowsPerPage);
+            currentPage += direction;
+            if (currentPage < 1) currentPage = 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+            paginate();
+        }
+
+        window.onload = paginate;
+
     </script>
   </body>
 </html>
